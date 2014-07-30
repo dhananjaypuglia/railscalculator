@@ -1,11 +1,17 @@
 FirstApp::Application.routes.draw do
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'calculator#index'
+
   put 'calculator' => 'calculator#update'
+  namespace :api do
+  put 'calculate' => 'calculator#calculate'
+  post 'create' => 'calculator#create'
+  end
   #get 'calculator' => 'calculator#update'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -36,6 +36,8 @@ end
 
 gem 'rspec-rails'
 
+gem 'devise'
+
 group :development do
   gem 'sqlite3', '1.3.8'
 end
@@ -44,6 +46,13 @@ end
 group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
+end
+
+gem 'jslint_on_rails', group: [:development, :test]
+
+group :test do
+  gem 'simplecov', require: false
+ gem 'metric_fu'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

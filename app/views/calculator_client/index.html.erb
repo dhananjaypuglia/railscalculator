@@ -1,0 +1,25 @@
+<div style = "float: right">
+<% if user_signed_in? %>
+    Logged in as <strong><%= current_user.email %></strong>.
+    <%= link_to "Edit profile", edit_user_registration_path, :class => 'navbar-link' %> |
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+</div>
+<br>
+<center><h1>Calculator</h1></center>
+<div id="calculators">
+<center><input type="button" id="addCalculator" value="Add Calculator"/></center>
+<div id="wrapper"></div>
+</div>
+<div id="template" style="visibility:hidden;">
+    <div id="calculator" style="width:350px; float: left" >
+        <h2>Calculator</h2>
+        <input type="text" id="command"/>
+        <input type="button" id="calculate" value="Calculate"/>
+        <input type="button" id="clear" value="Clear Results"/>
+        <h3 id="result"></h3>
+    </div>
+</div>

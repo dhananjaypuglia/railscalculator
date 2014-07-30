@@ -1,8 +1,5 @@
 class Calculator < ActiveRecord::Base
-  before_save :initialize_state
-  # def initialize state=0
-  #   @state = state
-  # end
+  belongs_to :user
 
   def initialize_state
     self.state =0 if self.state.nil?
@@ -31,9 +28,6 @@ class Calculator < ActiveRecord::Base
       else
         return "can not divide by zero"
       end
-
-
-
   end
 
   def reset
